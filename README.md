@@ -1,0 +1,1 @@
+# changi-airport-group-assignment
