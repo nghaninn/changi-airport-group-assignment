@@ -1,0 +1,24 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-changiassignment-dev-113449-authRole",
+      "UnauthRoleArn": "arn:aws:iam::994499184724:role/amplify-changiassignment-dev-113449-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::994499184724:role/amplify-changiassignment-dev-113449-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-changiassignment-dev-113449-deployment",
+      "UnauthRoleName": "amplify-changiassignment-dev-113449-unauthRole",
+      "StackName": "amplify-changiassignment-dev-113449",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:994499184724:stack/amplify-changiassignment-dev-113449/7c3fdb40-51ba-11ed-aa88-02972579351a",
+      "AmplifyAppId": "d1lc98huwb3hwb"
+    },
+    "categories": {
+      "function": {
+        "changiRestAPI": {
+          "deploymentBucketName": "amplify-changiassignment-dev-113449-deployment",
+          "s3Key": "amplify-builds/changiRestAPI-464867506b6861454734-build.zip",
+          "secretsPathAmplifyAppId": "d1lc98huwb3hwb"
+        }
+      }
+    }
+  }
+}
