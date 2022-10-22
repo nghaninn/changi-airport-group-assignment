@@ -73,10 +73,14 @@ router.put('/*', function (req, res) {
 * Example delete method *
 ****************************/
 
-// router.delete('/', function (req, res) {
-//     // Add your code here
-//     res.json({ success: 'delete call succeed!', url: req.url });
-// });
+router.delete('/', async function (req, res) {
+    let categoryQuery = `DELETE FROM Category`
+
+    const categoryResult = await SQLManager.queryOnce(categoryQuery);
+    console.log(categoryResult);
+
+    res.json({ itemResult: categoryResult })
+});
 
 router.delete('/*', function (req, res) {
     // Add your code here

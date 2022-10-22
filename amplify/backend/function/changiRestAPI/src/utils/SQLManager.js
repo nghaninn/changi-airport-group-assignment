@@ -1,4 +1,4 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
 // const mysql = require('/opt/nodejs/node_modules/mysql');
 const SSMManager = require("./SSMManager");
 // const SSMManager = require("/opt/nodejs/libs/SSMManager");
@@ -7,14 +7,26 @@ const SSMManager = require("./SSMManager");
 let sqlConnection = undefined;
 
 const loadSQLConnection = async () => {
-    sqlConnection = mysql.createConnection({
-        host: (await SSMManager.getSecrets(process.env['rds_name'])).Value ?? null,
-        user: (await SSMManager.getSecrets(process.env['rds_username'])).Value ?? null,
-        password: (await SSMManager.getSecrets(process.env['rds_password'])).Value ?? null,
-        port: (await SSMManager.getSecrets(process.env['rds_port'])).Value ?? null,
-        database: (await SSMManager.getSecrets(process.env['rds_database'])).Value + '_' + process.env.ENV ?? null,
-        multipleStatements: true,
-    });
+    try {
+        sqlConnection = mysql.createConnection({
+            host: (await SSMManager.getSecrets(process.env['rds_name'])).Value ?? '127.0.0.1',
+            user: (await SSMManager.getSecrets(process.env['rds_username'])).Value ?? 'user',
+            password: (await SSMManager.getSecrets(process.env['rds_password'])).Value ?? 'password',
+            port: (await SSMManager.getSecrets(process.env['rds_port'])).Value ?? 3306,
+            database: ((await SSMManager.getSecrets(process.env['rds_database'])).Value + '_' + process.env.ENV) ?? 'changi',
+            multipleStatements: true,
+        });
+    } catch (err) {
+        sqlConnection = mysql.createConnection({
+            host: '127.0.0.1',
+            user: 'user',
+            password: 'password',
+            port: 3306,
+            database: 'changi',
+            multipleStatements: true,
+        });
+    }
+    console.log(sqlConnection);
     await new Promise((req, rej) => {
         sqlConnection.connect(function (err) {
             if (err) rej(err)
@@ -44,7 +56,7 @@ const close = async () => {
         sqlConnection.end();
         sqlConnection = undefined;
         return
-    } 
+    }
 }
 
 module.exports = {
