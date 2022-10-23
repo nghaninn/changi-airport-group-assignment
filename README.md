@@ -110,7 +110,7 @@ python -m unittest test/test_index.py
 
 ----
 
-# Approximate man-hours taken
+# Approximate man-hours taken (2 days)
    [![project-time.png](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/project-time.png)](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/project-time.png)  
 
 ----
