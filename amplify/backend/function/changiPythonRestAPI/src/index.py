@@ -9,8 +9,6 @@ def getDBSecret():
     try:
         ssm = boto3.client('ssm')
         parameter = ssm.get_parameters(Names=[os.environ.get('rds_database'), os.environ.get('rds_name'), os.environ.get('rds_password'), os.environ.get('rds_port'), os.environ.get('rds_username')], WithDecryption=True)
-        print(parameter)
-        print(parameter['Parameters'])
 
         dbSecret['rds_database'] = next((x['Value'] + '_' + os.environ.get('ENV') for x in parameter['Parameters'] if x['Name'].endswith('rds_database')), 'changi')
         dbSecret['rds_name']     = next((x['Value'] for x in parameter['Parameters'] if x['Name'].endswith('rds_name')), '127.0.0.1')
@@ -28,7 +26,6 @@ def getDBSecret():
 
 def getDBConnection():
     dbSecret = getDBSecret()
-    # print(dbSecret)
 
     cnx = mysql.connector.connect(user=dbSecret['rds_username'], password=dbSecret['rds_password'],
                                     host=dbSecret['rds_name'],
@@ -44,7 +41,6 @@ def query(query):
 
     values = []
     for c in cursor:
-        print(c)
         values.append(c)
 
     cursor.close()
@@ -54,9 +50,6 @@ def query(query):
 
 
 def handler(event, context):
-    print('received event:')
-    print(event)
-
     if event['path'] == '/python/category' and event['httpMethod'] == 'GET':
         return listCategory()
     else:

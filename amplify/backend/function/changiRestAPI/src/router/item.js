@@ -1,7 +1,5 @@
 
 const express = require('express')
-const bodyParser = require('body-parser')
-const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
 const router = express.Router();
 const SQLManager = require('../utils/SQLManager');
 
@@ -10,12 +8,10 @@ const SQLManager = require('../utils/SQLManager');
  **********************/
 
 router.get('/', async function (req, res) {
-    console.log(req)
     const limit = req.query.limit ?? 10;
     const offset = req.query.offset ?? 0;
 
     let itemResult = await SQLManager.queryOnce(`SELECT i.*, c.name AS categoryName FROM Item i INNER JOIN Category c ON i.categoryID = c.id LIMIT ${limit} OFFSET ${offset}; SELECT COUNT(*) AS total FROM Item;`);
-    console.log(itemResult)
 
     let stringItemResult = JSON.stringify(itemResult)?.replace(/"categoryName":/g, '"category":');
     itemResult = Object.values(JSON.parse(stringItemResult))
@@ -42,7 +38,6 @@ router.get('/filter', async function (req, res) {
 });
 
 router.get('/category/:category?', async function (req, res) {
-    console.log(req)
     const category = req.params.category ?? null;
 
     let itemQuery = `SELECT c.name AS categoryName, SUM(i.price) AS totalPrice, COUNT(*) AS 'count' FROM Item i INNER JOIN Category c ON i.categoryID = c.id GROUP BY c.name ${category ? 'HAVING c.name = \'' + category + '\'' : ''}`
@@ -59,8 +54,6 @@ router.get('/category/:category?', async function (req, res) {
 });
 
 router.get('/:id', async function (req, res) {
-    // console.log(req)
-
     let itemResult = await SQLManager.queryOnce(`SELECT i.*, c.name AS categoryName FROM Item i INNER JOIN Category c ON i.categoryID = c.id WHERE i.id = ${req.params.id}`);
 
     let stringItemResult = JSON.stringify(itemResult).replace(/"categoryName":/g, '"category":');
@@ -77,8 +70,6 @@ router.get('/:id', async function (req, res) {
 ****************************/
 
 router.post('/', async function (req, res) {
-    // console.log(req)
-
     try {
         // create item object
         let _item = {
@@ -90,7 +81,6 @@ router.post('/', async function (req, res) {
 
         // store into db
         const itemResult = await SQLManager.queryOnce(itemQuery);
-        console.log('itemResult', itemResult);
 
         // return item id.
         res.status(201).json({ id: itemResult.insertId })
@@ -99,40 +89,25 @@ router.post('/', async function (req, res) {
     }
 });
 
-// router.post('/*', function (req, res) {
-//     // Add your code here
-//     res.json({ success: 'post call succeed!', url: req.url, body: req.body })
-// });
-
 /****************************
 * Example put method *
 ****************************/
-
-// router.put('/', function (req, res) {
-//     // Add your code here
-//     res.json({ success: 'put call succeed!', url: req.url, body: req.body })
-// });
 
 router.put('/:id', async function (req, res) {
     let _item = {
     }
     let attribute_keys = ['categoryID', 'name', 'price', 'createdOn', 'updatedOn']
-    // console.log(req?.body);
 
     for (let k of attribute_keys) {
-        // console.log(k)
         if (req?.body.hasOwnProperty(k)) {
             _item[k] = req.body[k]
         }
     }
-    // console.log(_item)
 
     if (Object.keys(_item).length > 0) {
         let itemQuery = `UPDATE Item SET ${Object.keys(_item).map(x => `\`${x}\` = '${_item[x]}'`).join(', ')} WHERE id = ${req.params.id}; SELECT i.*, c.name AS categoryName FROM Item i INNER JOIN Category c ON i.categoryID = c.id WHERE i.id = ${req.params.id}; `
-        console.log(itemQuery);
 
         const itemResult = await SQLManager.queryOnce(itemQuery);
-        console.log(itemResult);
 
         if (itemResult[0].affectedRows == 1) {
             res.json({ item: itemResult[1][0] })
@@ -150,7 +125,6 @@ router.delete('/', async function (req, res) {
     let itemQuery = `DELETE FROM Item`
 
     const itemResult = await SQLManager.queryOnce(itemQuery);
-    console.log(itemResult);
 
     res.json({ itemResult })
 });
@@ -159,7 +133,6 @@ router.delete('/:id', async function (req, res) {
     let itemQuery = `UPDATE Item SET deleted = 1, deletedOn = NOW() WHERE id = ${req.params.id}`
 
     const itemResult = await SQLManager.queryOnce(itemQuery);
-    console.log(itemResult);
 
     res.json({ itemResult })
 });
