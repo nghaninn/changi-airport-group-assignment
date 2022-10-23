@@ -65,12 +65,11 @@ yarn install
 
 6. Clone the Postman locally from the url above  
    To test locally, ensure that the url variable is set to **{{url_local_node}}** not ~~{{url_node}}~~  
-
+   
    Alternatively, run
 ```
 curl localhost:3000/node/item
 ```
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Create Category, then create Item**
 
 7. Task #1:  
@@ -93,10 +92,31 @@ curl localhost:3000/node/item
    [![task3-category-specific.png](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task3-category-specific.png)](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task3-category-specific.png)  
    **Uses the same function, just with params key**
    
+10. **Test Script for Python**  
+Return to root project directory
+
+```bash
+cd amplify/backend/function/changePythonRestAPI/src
+pipenv install
+
+python -m unittest test/test_index.py
+```
+   [![test-python.png](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/test-python.png)](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/test-python.png)  
+
+11. Lambda Python API test  
+    Run Python>Category>List API {{url_python}}/category  
+   [![lambda-python.png](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/lambda-python.png)](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/lambda-python.png)  
+
 ----
 
 # Approximate man-hours taken
    [![project-time.png](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/project-time.png)](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/project-time.png)  
+
+----
+
+# Unable to complete
+
+1. Start Lambda Python locally
 
 ----
 

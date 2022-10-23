@@ -39,5 +39,5 @@ class TestIndex(unittest.TestCase):
         result = index.listCategory()
         self.assertEqual(len(result), 2)
 
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
+#     unittest.main()
