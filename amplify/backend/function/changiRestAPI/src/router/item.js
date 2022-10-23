@@ -38,7 +38,7 @@ router.get('/filter', async function (req, res) {
     let stringItemResult = JSON.stringify(itemResult).replace(/"categoryName":/g, '"category":');
     itemResult = Object.values(JSON.parse(stringItemResult))
 
-    res.json({ items: itemResult, total_price: itemResult.map(s => s.price).reduce((a, b) => a + b, 0) });
+    res.json({ items: itemResult, total_price: itemResult.map(s => s.price).reduce((a, b) => Number(a) + Number(b), 0) });
 });
 
 router.get('/category/:category?', async function (req, res) {
