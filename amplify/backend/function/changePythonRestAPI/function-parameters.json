@@ -1,3 +1,10 @@
 {
-  "lambdaLayers": []
+  "lambdaLayers": [],
+  "secretNames": [
+    "rds_name",
+    "rds_username",
+    "rds_password",
+    "rds_port",
+    "rds_database"
+  ]
 }

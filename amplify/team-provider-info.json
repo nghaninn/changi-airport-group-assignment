@@ -21,11 +21,13 @@
         },
         "changePythonRestAPI": {
           "deploymentBucketName": "amplify-changiassignment-dev-113449-deployment",
-          "s3Key": "amplify-builds/changePythonRestAPI-69596b664f314a714650-build.zip"
+          "s3Key": "amplify-builds/changePythonRestAPI-6a30573038517761344a-build.zip",
+          "secretsPathAmplifyAppId": "d1lc98huwb3hwb"
         }
       },
       "auth": {
-        "undefined": {}
+        "undefined": {},
+        "true": {}
       }
     }
   }
