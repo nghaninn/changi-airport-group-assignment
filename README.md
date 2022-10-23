@@ -36,7 +36,7 @@ docker compose up
 ```bash
 docker ps
 ```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![docker-mysql](https://github.com/nghaninn/changi-airport-group-assignment/image/docker-mysql.png)](https://github.com/nghaninn/changi-airport-group-assignment/image/docker-mysql.png)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![docker-mysql](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/docker-mysql.png)](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/docker-mysql.png)  
 
 3. Access to Lambda Function Node.JS and install necessary packages
 
@@ -55,7 +55,7 @@ yarn install
    ```
    yarn test
    ```
-   [![test-nodejs](https://github.com/nghaninn/changi-airport-group-assignment/image/test-nodejs.png)](https://github.com/nghaninn/changi-airport-group-assignment/image/test-nodejs.png)  
+   [![test-nodejs](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/test-nodejs.png)](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/test-nodejs.png)  
 
   
 5. **Start Local Server for Node.JS**  
@@ -75,28 +75,28 @@ curl localhost:3000/node/item
 
 7. Task #1:  
    Create Category: Stationary  
-   [![task1-category-create.png](https://github.com/nghaninn/changi-airport-group-assignment/image/task1-category-create.png)](https://github.com/nghaninn/changi-airport-group-assignment/image/task1-category-create.png)  
-   [![task1-category-result.png](https://github.com/nghaninn/changi-airport-group-assignment/image/task1-category-result.png)](https://github.com/nghaninn/changi-airport-group-assignment/image/task1-category-result.png)  
+   [![task1-category-create.png](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task1-category-create.png)](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task1-category-create.png)  
+   [![task1-category-result.png](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task1-category-result.png)](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task1-category-result.png)  
 
    Create Item: Notebook  
-   [![task1-item-create.png](https://github.com/nghaninn/changi-airport-group-assignment/image/task1-item-create.png)](https://github.com/nghaninn/changi-airport-group-assignment/image/task1-item-create.png)  
-   [![task1-item-result.png](https://github.com/nghaninn/changi-airport-group-assignment/image/task1-item-result.png)](https://github.com/nghaninn/changi-airport-group-assignment/image/task1-item-result.png)  
+   [![task1-item-create.png](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task1-item-create.png)](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task1-item-create.png)  
+   [![task1-item-result.png](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task1-item-result.png)](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task1-item-result.png)  
 
 8. Task #2:  
    Update first item updatedOn time to x year before.
-   [![task2-item-update-time.png](https://github.com/nghaninn/changi-airport-group-assignment/image/task2-item-update-time.png)](https://github.com/nghaninn/changi-airport-group-assignment/image/task2-item-update-time.png)  
+   [![task2-item-update-time.png](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task2-item-update-time.png)](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task2-item-update-time.png)  
    Filter date after the date above.  
-   [![task2-filter-result.png](https://github.com/nghaninn/changi-airport-group-assignment/image/task2-filter-result.png)](https://github.com/nghaninn/changi-airport-group-assignment/image/task2-filter-result.png)  
+   [![task2-filter-result.png](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task2-filter-result.png)](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task2-filter-result.png)  
 
 9. Task #3:  
-   [![task3-category-all.png](https://github.com/nghaninn/changi-airport-group-assignment/image/task3-category-all.png)](https://github.com/nghaninn/changi-airport-group-assignment/image/task3-category-all.png)  
-   [![task3-category-specific.png](https://github.com/nghaninn/changi-airport-group-assignment/image/task3-category-specific.png)](https://github.com/nghaninn/changi-airport-group-assignment/image/task3-category-specific.png)  
+   [![task3-category-all.png](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task3-category-all.png)](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task3-category-all.png)  
+   [![task3-category-specific.png](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task3-category-specific.png)](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/task3-category-specific.png)  
    **Uses the same function, just with params key**
    
 ----
 
 # Approximate man-hours taken
-   [![project-time.png](https://github.com/nghaninn/changi-airport-group-assignment/image/project-time.png)](https://github.com/nghaninn/changi-airport-group-assignment/image/project-time.png)  
+   [![project-time.png](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/project-time.png)](https://github.com/nghaninn/changi-airport-group-assignment/blob/main/image/project-time.png)  
 
 ----
 
