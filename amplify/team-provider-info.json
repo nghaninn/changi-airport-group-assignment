@@ -9,15 +9,23 @@
       "UnauthRoleName": "amplify-changiassignment-dev-113449-unauthRole",
       "StackName": "amplify-changiassignment-dev-113449",
       "StackId": "arn:aws:cloudformation:ap-southeast-1:994499184724:stack/amplify-changiassignment-dev-113449/7c3fdb40-51ba-11ed-aa88-02972579351a",
-      "AmplifyAppId": "d1lc98huwb3hwb"
+      "AmplifyAppId": "d1lc98huwb3hwb",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-changiassignment-dev-113449-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "function": {
         "changiRestAPI": {
           "deploymentBucketName": "amplify-changiassignment-dev-113449-deployment",
-          "s3Key": "amplify-builds/changiRestAPI-5a704e4851544d4e6a78-build.zip",
+          "s3Key": "amplify-builds/changiRestAPI-77315756794f3953676b-build.zip",
           "secretsPathAmplifyAppId": "d1lc98huwb3hwb"
+        },
+        "changePythonRestAPI": {
+          "deploymentBucketName": "amplify-changiassignment-dev-113449-deployment",
+          "s3Key": "amplify-builds/changePythonRestAPI-69596b664f314a714650-build.zip"
         }
+      },
+      "auth": {
+        "undefined": {}
       }
     }
   }

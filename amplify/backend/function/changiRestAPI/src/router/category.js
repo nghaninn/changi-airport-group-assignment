@@ -20,9 +20,9 @@ router.get('/', async function (req, res) {
     res.json({ categories: categoryResult });
 });
 
-router.get('/*', async function (req, res) {
+router.get('/:id', async function (req, res) {
     // Add your code here
-    let categoryResult = await SQLManager.query(`SELECT * FROM Category c WHERE c.id = ${req.body.id}`);
+    let categoryResult = await SQLManager.query(`SELECT * FROM Category c WHERE c.id = ${req.params.id}`);
     categoryResult = Object.values(JSON.parse(JSON.stringify(categoryResult)))
     await SQLManager.close();
     res.json({ categories: categoryResult });

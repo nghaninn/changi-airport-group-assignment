@@ -42,8 +42,8 @@ app.use(function(req, res, next) {
   next()
 });
 
-app.use('/item', itemRouter)
-app.use('/category', categoryRouter)
+app.use('/node/item', itemRouter)
+app.use('/node/category', categoryRouter)
 
 app.listen(3000, function() {
     console.log("App started")

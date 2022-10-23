@@ -1,11 +1,24 @@
 {
   "version": 1,
   "paths": {
-    "/": {
-      "name": "/",
+    "/node": {
+      "name": "/node",
       "lambdaFunction": "changiRestAPI",
       "permissions": {
         "setting": "open"
+      }
+    },
+    "/python": {
+      "name": "/python",
+      "lambdaFunction": "changePythonRestAPI",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
       }
     }
   }
