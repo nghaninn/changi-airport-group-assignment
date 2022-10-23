@@ -59,6 +59,7 @@ yarn install
 
   
 5. **Start Local Server for Node.JS**  
+   Exit test script (Ctrl + C)
     ```bash
     yarn dev
     ```
@@ -117,6 +118,10 @@ python -m unittest test/test_index.py
 # Unable to complete
 
 1. Start Lambda Python locally
+
+----
+
+[![Changi Airport Group Assignment Postman](https://yt-embed.herokuapp.com/embed?v=719CPC5cLQs)](https://www.youtube.com/embed/719CPC5cLQs "Changi Airport Group Assignment Postman")  
 
 ----
 
