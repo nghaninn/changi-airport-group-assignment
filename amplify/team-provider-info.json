@@ -16,12 +16,12 @@
       "function": {
         "changiRestAPI": {
           "deploymentBucketName": "amplify-changiassignment-dev-113449-deployment",
-          "s3Key": "amplify-builds/changiRestAPI-77315756794f3953676b-build.zip",
+          "s3Key": "amplify-builds/changiRestAPI-4f426952545a76707a30-build.zip",
           "secretsPathAmplifyAppId": "d1lc98huwb3hwb"
         },
         "changePythonRestAPI": {
           "deploymentBucketName": "amplify-changiassignment-dev-113449-deployment",
-          "s3Key": "amplify-builds/changePythonRestAPI-6a30573038517761344a-build.zip",
+          "s3Key": "amplify-builds/changePythonRestAPI-455575734e7975595757-build.zip",
           "secretsPathAmplifyAppId": "d1lc98huwb3hwb"
         }
       },

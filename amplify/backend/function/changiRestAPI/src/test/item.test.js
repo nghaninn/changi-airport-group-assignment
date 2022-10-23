@@ -46,7 +46,7 @@ afterEach(() => console.log('1 - afterEach'));
 describe('GET /item', () => {
     it('GET / => array of items', () => {
         return request(app)
-            .get('/item')
+            .get('/node/item')
 
             .expect('Content-Type', /json/)
 
@@ -73,7 +73,7 @@ describe('GET /item', () => {
 
     it('GET / => items by ID', () => {
         return request(app)
-            .get('/item/1')
+            .get('/node/item/1')
 
             .expect('Content-Type', /json/)
 
@@ -93,13 +93,13 @@ describe('GET /item', () => {
     });
 
     it('GET /id => 404 if item not found', () => {
-        return request(app).get('/item/10000000000').expect(404);
+        return request(app).get('/node/item/10000000000').expect(404);
     });
 
     it('POST / => create NEW item', () => {
         return (
             request(app)
-                .post('/item')
+                .post('/node/item')
 
                 // Item send code
 
@@ -124,12 +124,12 @@ describe('GET /item', () => {
     });
 
     it('POST / => item missing attribute', () => {
-        return request(app).post('/item').send({ name: 123456789 }).expect(400);
+        return request(app).post('/node/item').send({ name: 123456789 }).expect(400);
     });
 
     it('PUT / => item update', () => {
         return (
-            request(app).put('/item/1')
+            request(app).put('/node/item/1')
                 .send({
                     name: "Title 1"
                 })
